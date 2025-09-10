@@ -36,6 +36,16 @@ bundle exec jekyll serve --livereload
 - 可在 GitHub Actions 中设定定时构建（`.github/workflows/pages.yml`），定期触发以获取更新。
 - 若担心 breaking changes，可把 `@latest` 换成固定版本 tag，并按需升级。
 
+## 迁移旧博客内容（blogdown -> Jekyll）
+
+- 工作流会自动检出仓库 `caelanyang/blogdown`（分支 `master`），并通过 `scripts/migrate_blogdown_to_jekyll.rb` 将 `content/` 下的 Markdown/HTML（带 Front Matter）转换到本仓库的 `_posts/`。
+- Hugo 的 `_index.md` 会自动跳过。源文章若无日期，将从文件名或当前时间推断。
+- 如需本地执行：
+
+```bash
+ruby scripts/migrate_blogdown_to_jekyll.rb ../path/to/blogdown/content _posts
+```
+
 ## 部署到 GitHub Pages
 
 开启仓库的 Pages（Settings -> Pages），Source 选择 `GitHub Actions`。本仓库已包含工作流文件，推送后会自动构建与发布。

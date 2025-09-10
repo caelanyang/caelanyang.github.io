@@ -23,6 +23,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout blogdown repo
+        uses: actions/checkout@v4
+        with:
+          repository: caelanyang/blogdown
+          path: blogdown-src
+          ref: master
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -33,6 +40,10 @@ jobs:
         run: |
           bundle config set path 'vendor/bundle'
           bundle install --jobs 4 --retry 3
+
+      - name: Migrate blogdown content to Jekyll
+        run: |
+          ruby scripts/migrate_blogdown_to_jekyll.rb blogdown-src/content _posts
 
       - name: Build with Jekyll
         env:
