@@ -1,4 +1,4 @@
-title: 曹彦阳的博客
+title: Caaelan‘s Blog
 email: your-email@example.com
 description: >-
   记录开发、学习与生活的点滴。
@@ -7,7 +7,7 @@ url: "https://caelanyang.github.io"
 locale: zh-CN
 
 # Minimal Mistakes via remote_theme for easy updates
-remote_theme: "mmistakes/minimal-mistakes@latest"
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default" # 可改为 air, aqua, contrast, dark, dirt, neon, sunrise, etc.
 
 # Build settings
