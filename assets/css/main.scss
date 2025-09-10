@@ -1,0 +1,10 @@
+---
+---
+// Import Minimal Mistakes skin and base styles
+@import "minimal-mistakes/skins/default"; // skin: change to your preferred one
+@import "minimal-mistakes"; // main partials
+
+// Your overrides (safe for updates)
+// 示例：调整正文行高与代码块间距
+body { line-height: 1.75; }
+pre, code { font-size: 0.95em; }

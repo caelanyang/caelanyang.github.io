@@ -1,0 +1,69 @@
+title: 曹彦阳的博客
+email: your-email@example.com
+description: >-
+  记录开发、学习与生活的点滴。
+baseurl: "" # e.g. /blog
+url: "https://caelanyang.github.io"
+locale: zh-CN
+
+# Minimal Mistakes via remote_theme for easy updates
+remote_theme: "mmistakes/minimal-mistakes@latest"
+minimal_mistakes_skin: "default" # 可改为 air, aqua, contrast, dark, dirt, neon, sunrise, etc.
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+paginate: 10
+paginate_path: "/page:num/"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-include-cache
+
+# Author profile
+author:
+  name: "曹彦阳"
+  avatar: "/assets/images/avatar.jpg"
+  bio: "软件工程师 / 终身学习者"
+  location: Beijing
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/caelanyang"
+
+# Navigation
+nav:
+  - title: "首页"
+    url: "/"
+  - title: "归档"
+    url: "/year-archive/"
+  - title: "分类"
+    url: "/categories/"
+  - title: "标签"
+    url: "/tags/"
+  - title: "关于"
+    url: "/about/"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+
+# Excludes
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
