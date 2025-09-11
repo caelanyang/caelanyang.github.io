@@ -20,6 +20,12 @@ permalink: /:categories/:title/
 paginate: 10
 paginate_path: "/page:num/"
 
+# Collections
+collections:
+  moments:
+    output: false
+    sort_by: date
+
 # Plugin settings
 plugins:
   - jekyll-remote-theme
@@ -42,12 +48,14 @@ author:
       url: "https://jiacheng.site"
     - label: "Moments"
       icon: "fas fa-fw fa-camera"
-      url: "https://moments.jiacheng.site"
+      url: "/moments/"
 
 # Navigation
 nav:
   - title: "首页"
     url: "/"
+  - title: "Moments"
+    url: "/moments/"
   - title: "归档"
     url: "/year-archive/"
   - title: "分类"
