@@ -1,10 +1,13 @@
-title: Caaelan‘s Blog
-email: your-email@example.com
+title: Jiacheng's Blog
+email: jiacheng@example.com
 description: >-
-  记录开发、学习与生活的点滴。
+  记录开发、学习与生活的点滴。Android 与 iOS 开发者，喜欢折腾技术，热爱读书与摄影。
 baseurl: "" # e.g. /blog
 url: "https://caelanyang.github.io"
 locale: zh-CN
+
+# Date format for posts
+date_format: "%Y年%-m月%-d日"
 
 # Minimal Mistakes via remote_theme for easy updates
 remote_theme: "mmistakes/minimal-mistakes"
@@ -17,6 +20,7 @@ permalink: /:categories/:title/
 paginate: 10
 paginate_path: "/page:num/"
 
+# Plugin settings
 plugins:
   - jekyll-remote-theme
   - jekyll-paginate
@@ -25,14 +29,20 @@ plugins:
 
 # Author profile
 author:
-  name: "曹彦阳"
+  name: "Jiacheng"
   avatar: "/assets/images/avatar.jpg"
-  bio: "Android 与 iOS 开发者，偶尔写技术，更多记录所思所想。"
-  location: Beijing
+  bio: "15年大学毕业，目前在广州从事 Android 以及 iOS 应用开发。平常喜欢折腾点东西，喜欢看点书，喜欢摄影。"
+  location: "Guangzhou, China"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/caelanyang"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://jiacheng.site"
+    - label: "Moments"
+      icon: "fas fa-fw fa-camera"
+      url: "https://moments.jiacheng.site"
 
 # Navigation
 nav:
@@ -56,6 +66,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      show_date: true
       comments: false
       share: true
       related: true

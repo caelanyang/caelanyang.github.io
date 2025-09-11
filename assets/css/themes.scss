@@ -1,0 +1,140 @@
+---
+---
+
+// Theme Variables and Overrides
+// Default theme uses Minimal Mistakes original styles - no overrides needed
+
+// Dark theme
+body.theme-dark {
+  --primary-color: #d63384;
+  --background-color: #2e2e2e;
+  --text-color: #fff;
+  --border-color: #444;
+  --sidebar-color: #1e1e1e;
+  --link-color: #74b9ff;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+  
+  .masthead {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .page__content {
+    background-color: var(--background-color);
+  }
+  
+  .sidebar {
+    background-color: var(--sidebar-color);
+  }
+  
+  .archive__item-teaser img,
+  .page__hero-image img {
+    filter: brightness(0.8);
+  }
+}
+
+// Air theme (light blue)
+body.theme-air {
+  --primary-color: #0693e3;
+  --background-color: #f8fcff;
+  --text-color: #333;
+  --border-color: #e3f2fd;
+  --sidebar-color: #f0f8ff;
+  --link-color: #0693e3;
+  
+  background-color: var(--background-color);
+}
+
+// Aqua theme
+body.theme-aqua {
+  --primary-color: #00acc1;
+  --background-color: #f0fdff;
+  --text-color: #333;
+  --border-color: #b2ebf2;
+  --sidebar-color: #e0f2f1;
+  --link-color: #00acc1;
+  
+  background-color: var(--background-color);
+}
+
+// Contrast theme
+body.theme-contrast {
+  --primary-color: #007bff;
+  --background-color: #fff;
+  --text-color: #000;
+  --border-color: #333;
+  --sidebar-color: #f8f9fa;
+  --link-color: #007bff;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+// Dirt theme (earth tones)
+body.theme-dirt {
+  --primary-color: #8b4513;
+  --background-color: #fdf6e3;
+  --text-color: #3c3c3c;
+  --border-color: #d2b48c;
+  --sidebar-color: #f5e6d3;
+  --link-color: #a0522d;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+// Mint theme
+body.theme-mint {
+  --primary-color: #00c851;
+  --background-color: #f0fff0;
+  --text-color: #333;
+  --border-color: #90ee90;
+  --sidebar-color: #e8f5e8;
+  --link-color: #00c851;
+  
+  background-color: var(--background-color);
+}
+
+// Neon theme (dark with bright accents)
+body.theme-neon {
+  --primary-color: #ff073a;
+  --background-color: #0a0a0a;
+  --text-color: #fff;
+  --border-color: #333;
+  --sidebar-color: #1a1a1a;
+  --link-color: #39ff14;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+  
+  .masthead {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+// Plum theme
+body.theme-plum {
+  --primary-color: #663399;
+  --background-color: #faf5ff;
+  --text-color: #333;
+  --border-color: #dda0dd;
+  --sidebar-color: #f0e6ff;
+  --link-color: #663399;
+  
+  background-color: var(--background-color);
+}
+
+// Sunrise theme
+body.theme-sunrise {
+  --primary-color: #ff6347;
+  --background-color: #fff8dc;
+  --text-color: #333;
+  --border-color: #ffa500;
+  --sidebar-color: #ffe4e1;
+  --link-color: #ff4500;
+  
+  background-color: var(--background-color);
+}
