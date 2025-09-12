@@ -1,6 +1,10 @@
 ---
 ---
 
+.moments-page .page__title {
+  text-align: center;
+}
+
 /* Moments Typography & Styles */
 .moments-container {
   max-width: 680px;
@@ -11,6 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 .moments-header {
   text-align: center;
@@ -98,10 +103,6 @@
   min-width: 0;
 }
 
-.moment-header {
-  margin-bottom: 12px;
-}
-
 .moment-author {
   font-size: 1em;
   font-weight: 600;
@@ -109,6 +110,7 @@
   display: block;
   margin-bottom: 8px;
 }
+
 
 .moment-time {
   margin-top: 15px;

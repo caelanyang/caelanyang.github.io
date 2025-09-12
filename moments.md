@@ -4,15 +4,14 @@ title: "Moments"
 permalink: /moments/
 author_profile: true
 toc: false
-classes: wide
+classes: wide moments-page
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/moments.css' | relative_url }}">
 
 <div class="moments-container">
   <div class="moments-header">
-    <h1>📸 生活片段</h1>
-    <p>记录生活中的美好瞬间</p>
+    <p>爱好文艺，趣味高雅，精通各种雕虫小技</p>
   </div>
   
   <div class="moments-timeline">

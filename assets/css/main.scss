@@ -109,6 +109,12 @@ pre, code { font-size: 0.95em; }
   }
 }
 
+/* Dark theme footer */
+.theme-dark .page__footer {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
 // Responsive adjustments
 @media (max-width: 768px) {
   .theme-switcher {
