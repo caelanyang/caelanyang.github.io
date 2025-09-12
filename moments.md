@@ -19,57 +19,82 @@ classes: wide
     {% assign sorted_moments = site.moments | sort: 'date' | reverse %}
     {% for moment in sorted_moments %}
     <div class="moment-item" data-date="{{ moment.date | date: '%Y-%m-%d' }}">
-      <div class="moment-avatar">
-        <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="Jiacheng">
+      <div class="moment-date-column">
+        <div class="moment-date">{{ moment.date | date: "%b %-d" }}</div>
+        <div class="moment-year">{{ moment.date | date: "%Y" }}</div>
       </div>
       
-      <div class="moment-content">
-        <div class="moment-header">
-          <h3 class="moment-author">Jiacheng</h3>
-          <span class="moment-date">{{ moment.date | date: "%Y年%m月%d日 %H:%M" }}</span>
+      <div class="moment-entry">
+        <div class="moment-avatar">
+          <img src="{{ '/assets/images/avatar-moments.jpg' | relative_url }}" alt="Jiacheng">
         </div>
         
-        {% if moment.content and moment.content != empty %}
-        <div class="moment-text">
-          {{ moment.content | markdownify }}
-        </div>
-        {% endif %}
-        
-        {% if moment.images %}
-        <div class="moment-images {% if moment.images.size == 1 %}single-image{% elsif moment.images.size <= 3 %}few-images{% else %}many-images{% endif %}" data-images="{{ moment.images | jsonify | escape }}">
-          {% for image in moment.images %}
-          <div class="moment-image" data-index="{{ forloop.index0 }}" data-src="{{ image }}">
-            <img src="{{ image }}" alt="Moment image" loading="lazy">
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
-        
-        {% if moment.link %}
-        <div class="moment-link">
-          <a href="{{ moment.link.url }}" target="_blank" rel="noopener">
-            <div class="link-preview">
-              {% if moment.link.image %}
-              <img src="{{ moment.link.image }}" alt="Link preview">
+        <div class="moment-content">
+          <div class="moment-header">
+            <span class="moment-author">Jiacheng</span>
+            {% if moment.tags %}
+            {% assign valid_tags = "" | split: "," %}
+            {% for tag in moment.tags %}
+              {% if tag and tag != "" and tag != " " %}
+                {% assign valid_tags = valid_tags | push: tag %}
               {% endif %}
-              <div class="link-info">
-                <h4>{{ moment.link.title }}</h4>
-                {% if moment.link.description %}
-                <p>{{ moment.link.description }}</p>
-                {% endif %}
-              </div>
+            {% endfor %}
+            
+            {% if valid_tags.size > 0 %}
+            <div class="moment-tags">
+              {% for tag in valid_tags %}
+              <span class="moment-tag">#{{ tag }}</span>
+              {% endfor %}
             </div>
-          </a>
-        </div>
-        {% endif %}
-        
-        {% if moment.tags %}
-        <div class="moment-tags">
-          {% for tag in moment.tags %}
-          <span class="moment-tag">#{{ tag }}</span>
+            {% endif %}
+            {% endif %}
+          </div>
+          
+          {% if moment.content and moment.content != empty %}
+          <div class="moment-text">
+            {{ moment.content | markdownify }}
+          </div>
+          {% endif %}
+          
+          {% if moment.pictures %}
+          {% assign valid_pictures = "" | split: "," %}
+          {% for image in moment.pictures %}
+            {% if image and image != "" and image != " " %}
+              {% assign valid_pictures = valid_pictures | push: image %}
+            {% endif %}
           {% endfor %}
+          
+          {% if valid_pictures.size > 0 %}
+          <div class="moment-images {% if valid_pictures.size == 1 %}single-image{% elsif valid_pictures.size <= 3 %}few-images{% else %}many-images{% endif %}" data-images="{{ valid_pictures | jsonify | escape }}">
+            {% for image in valid_pictures %}
+            <div class="moment-image" data-index="{{ forloop.index0 }}" data-src="{{ image | relative_url }}">
+              <img src="{{ image | relative_url }}" alt="Moment image" loading="lazy">
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% endif %}
+          
+          {% if moment.link %}
+          <div class="moment-link">
+            <a href="{{ moment.link.url }}" target="_blank" rel="noopener">
+              <div class="link-preview">
+                {% if moment.link.image %}
+                <img src="{{ moment.link.image }}" alt="Link preview">
+                {% endif %}
+                <div class="link-info">
+                  <h4>{{ moment.link.title }}</h4>
+                  {% if moment.link.description %}
+                  <p>{{ moment.link.description }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endif %}
+          
+          <div class="moment-time">{{ moment.date | date: "%H:%M" }}{% if moment.note and moment.note != empty %} {{ moment.note }}{% endif %}</div>
         </div>
-        {% endif %}
       </div>
     </div>
     {% endfor %}

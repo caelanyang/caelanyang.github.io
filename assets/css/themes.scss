@@ -4,6 +4,11 @@
 // Theme Variables and Overrides
 // Default theme uses Minimal Mistakes original styles - no overrides needed
 
+// Global avatar styling - remove borders
+.author__avatar img {
+  border: none !important;
+}
+
 // Dark theme
 body.theme-dark {
   --primary-color: #d63384;
@@ -13,25 +18,98 @@ body.theme-dark {
   --sidebar-color: #1e1e1e;
   --link-color: #74b9ff;
   
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
   
+  // Header/Navigation
   .masthead {
-    background-color: #1e1e1e;
-    border-bottom: 1px solid var(--border-color);
+    background-color: #1e1e1e !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    
+    .site-title,
+    .site-subtitle {
+      color: var(--text-color) !important;
+    }
+  }
+  
+  .greedy-nav {
+    background: #1e1e1e !important;
+    
+    .visible-links a,
+    .masthead__menu-item {
+      color: #ccc !important;
+      
+      &:hover {
+        color: var(--text-color) !important;
+      }
+    }
+    
+    .hidden-links {
+      background: #1e1e1e !important;
+      border: 1px solid var(--border-color) !important;
+      
+      a {
+        color: #ccc !important;
+        
+        &:hover {
+          color: var(--text-color) !important;
+          background: #333 !important;
+        }
+      }
+    }
+    
+    .nav__toggle {
+      color: #ccc !important;
+    }
   }
   
   .page__content {
-    background-color: var(--background-color);
+    background-color: var(--background-color) !important;
   }
   
-  .sidebar {
-    background-color: var(--sidebar-color);
+  .sidebar,
+  .sidebar__right,
+  .author,
+  .author__avatar,
+  .author__name,
+  .author__bio,
+  .author__urls-wrapper,
+  .author__urls,
+  .author__content,
+  .sidebar .author,
+  .sidebar__right .author {
+    background: var(--background-color) !important;
+    background-color: var(--background-color) !important;
+    border: none !important;
+    box-shadow: none !important;
   }
   
   .archive__item-teaser img,
   .page__hero-image img {
     filter: brightness(0.8);
+  }
+  
+  // Content areas
+  .page,
+  .archive,
+  .layout--single {
+    background-color: var(--background-color) !important;
+  }
+  
+  // Text elements
+  h1, h2, h3, h4, h5, h6,
+  .page__title,
+  .archive__item-title {
+    color: var(--text-color) !important;
+  }
+  
+  // Links
+  a {
+    color: var(--link-color) !important;
+    
+    &:hover {
+      filter: brightness(1.2) !important;
+    }
   }
 }
 
@@ -106,12 +184,93 @@ body.theme-neon {
   --sidebar-color: #1a1a1a;
   --link-color: #39ff14;
   
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
   
+  // Header/Navigation
   .masthead {
-    background-color: #1a1a1a;
-    border-bottom: 1px solid var(--border-color);
+    background-color: #1a1a1a !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    
+    .site-title,
+    .site-subtitle {
+      color: var(--text-color) !important;
+    }
+  }
+  
+  .greedy-nav {
+    background: #1a1a1a !important;
+    
+    .visible-links a,
+    .masthead__menu-item {
+      color: #ccc !important;
+      
+      &:hover {
+        color: var(--link-color) !important;
+      }
+    }
+    
+    .hidden-links {
+      background: #1a1a1a !important;
+      border: 1px solid var(--border-color) !important;
+      
+      a {
+        color: #ccc !important;
+        
+        &:hover {
+          color: var(--link-color) !important;
+          background: #333 !important;
+        }
+      }
+    }
+    
+    .nav__toggle {
+      color: #ccc !important;
+    }
+  }
+  
+  // Content areas
+  .page,
+  .archive,
+  .layout--single {
+    background-color: var(--background-color) !important;
+  }
+  
+  .page__content {
+    background-color: var(--background-color) !important;
+  }
+  
+  .sidebar,
+  .sidebar__right,
+  .author,
+  .author__avatar,
+  .author__name,
+  .author__bio,
+  .author__urls-wrapper,
+  .author__urls,
+  .author__content,
+  .sidebar .author,
+  .sidebar__right .author {
+    background: var(--background-color) !important;
+    background-color: var(--background-color) !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  // Text elements
+  h1, h2, h3, h4, h5, h6,
+  .page__title,
+  .archive__item-title {
+    color: var(--text-color) !important;
+  }
+  
+  // Links
+  a {
+    color: var(--link-color) !important;
+    
+    &:hover {
+      filter: brightness(1.2) !important;
+    }
   }
 }
 
